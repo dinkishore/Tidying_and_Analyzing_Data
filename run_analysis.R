@@ -40,7 +40,7 @@ complete_merge <- cbind(Y_label_merge,X_merge)
 
 
 # Creating second independent tidy data set
-complete_merge <- group_by(complete_merge,activity) %>% arrange(Subject,activity)
+complete_merge <- group_by(complete_merge,activity,Subject) %>% arrange(Subject) %>% summarise_all(mean)
 
 
 #Creating and Outputting Table
